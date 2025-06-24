@@ -104,6 +104,3 @@ This project is under the MIT License.
 ---
 
 Built with ❤️ by [Alok Bhateshwar](https://github.com/alokbhateshwar)
-
-```
-

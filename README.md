@@ -1,84 +1,110 @@
 
+
+````markdown
+# 🧹 Loan Data Cleaning & Preprocessing
+
+This project focuses on cleaning, transforming, and preparing a loan dataset for machine learning models. It includes handling missing values, fixing categorical variables, and applying encoding techniques like OneHotEncoder.
+
+## 📌 Objective
+
+Prepare a raw loan dataset for ML-ready analysis by:
+- Cleaning inconsistencies
+- Handling missing values
+- Converting data types
+- Encoding categorical variables
+
 ---
 
-```markdown
-# Lean Data Pipeline
+## 📁 Dataset Info
 
-A lightweight, efficient, and modular pipeline for cleaning and preprocessing messy datasets. Designed for data science workflows, machine learning preprocessing, and automated data analysis.
+The dataset includes common loan-related features like:
 
-## 🔍 Features
+- `Loan_ID`
+- `Gender`
+- `Married`
+- `Dependents`
+- `Education`
+- `Self_Employed`
+- `ApplicantIncome`
+- `CoapplicantIncome`
+- `LoanAmount`
+- `Loan_Amount_Term`
+- `Credit_History`
+- `Property_Area`
+- `Loan_Status`
 
-- Handles missing values (mean, median, mode imputation)
-- Fixes categorical inconsistencies (e.g., '3+' → '3')
-- Converts data types for modeling
-- Encodes categorical variables
-- Scales numeric features
-- Modular and customizable
+---
 
-## 📁 Project Structure
+## 🔧 Data Cleaning Steps
 
-```
+- Replaced `'3+'` with `3` in `Dependents`
+- Converted `Dependents` to numeric type
+- Handled `NaN` using mean or mode as appropriate
+- Removed or filled missing data in other columns
+- Checked and dropped duplicates if any
+- Verified correct data types
 
-lean-data-pipeline-/
-│
-├── data/               # Raw or sample datasets
-├── notebooks/          # Jupyter notebooks for demo & testing
-├── scripts/            # Python scripts for cleaning and transformation
-├── outputs/            # Cleaned data or result snapshots
-├── README.md           # Project documentation
-└── requirements.txt    # Required Python packages
+---
 
-````
+## 🔠 Categorical Encoding
 
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/alokbhateshwar/lean-data-pipeline-.git
-cd lean-data-pipeline-
-````
-
-### 2. Install Requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the Cleaning Pipeline
-
-You can run the cleaning script or explore the Jupyter notebook in the `notebooks/` folder.
-
-```bash
-python scripts/clean_data.py
-```
-
-## 📊 Example Use Case
+Used **OneHotEncoding** on key categorical columns:
+- `Gender`
+- `Married`
+- `Education`
+- `Self_Employed`
+- `Property_Area`
+- `Loan_Status`
 
 ```python
-from scripts.clean_data import clean_dataset
+from sklearn.preprocessing import OneHotEncoder
+encoder = OneHotEncoder()
+encoded = encoder.fit_transform(df[['Married']]).toarray()
+````
 
-df = pd.read_csv("data/raw_dataset.csv")
-cleaned_df = clean_dataset(df)
-```
+---
 
-## 🧠 Technologies Used
+## 📊 Tools & Libraries
 
-* Python 🐍
+* Python
 * Pandas
 * NumPy
 * Scikit-learn
 * Jupyter Notebook
 
-## 🤝 Contributing
+---
 
-Feel free to fork this repo, suggest improvements, or submit pull requests!
+## ▶️ How to Run
 
-## 📄 License
+1. Clone the repo:
 
-This project is licensed under the MIT License – see the `LICENSE` file for details.
+```bash
+git clone https://github.com/alokbhateshwar/lean-data-pipeline-.git
+```
+
+2. Open `main.ipynb` in Jupyter Notebook
+
+3. Follow through the notebook to understand each step
 
 ---
 
+## 📌 Future Enhancements
+
+* Feature scaling (StandardScaler / MinMaxScaler)
+* Imbalanced target handling (SMOTE)
+* Model training (Logistic Regression, Random Forest)
+* Deployment as a Streamlit app
+
+---
+
+## 📄 License
+
+This project is under the MIT License.
+
+---
+
+<<<<<<< HEAD
  by [Alok Bhateshwar](https://github.com/alokbhateshwar)
 
+=======
+Built with ❤️ by [Alok Bhateshwar](https://github.com/alokbhateshwar)

@@ -80,5 +80,5 @@ This project is licensed under the MIT License – see the `LICENSE` file for de
 
 ---
 
-Built with ❤️ by [Alok Bhateshwar](https://github.com/alokbhateshwar)
+ by [Alok Bhateshwar](https://github.com/alokbhateshwar)
 
